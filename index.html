@@ -1,167 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Franco Oosthuizen | Deckhand</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franco Oosthuizen | Deckhand</title>
+  <meta name="description" content="Franco Oosthuizen | Deckhand | Cape Town | Available 28 March 2026" />
+  <style>
+    :root{
+      --navy:#0b1c2d;
+      --navy2:#102a43;
+      --teal:#00a7b3;
+      --text:#0f172a;
+      --muted:#4b5563;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --border:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    .wrap{
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 18px 60px;
+    }
+    .topbar{
+      background: linear-gradient(135deg, var(--navy), var(--navy2));
+      color:#fff;
+      border-radius: 18px;
+      padding: 24px 22px;
+      display:flex;
+      gap:18px;
+      align-items:center;
+      box-shadow: 0 10px 24px rgba(2, 6, 23, 0.18);
+    }
+    .headshot{
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 4px solid rgba(255,255,255,0.18);
+      object-fit: cover;
+      background: rgba(255,255,255,0.08);
+      flex: 0 0 auto;
+    }
+    .title{
+      flex:1 1 auto;
+      min-width: 0;
+    }
+    h1{
+      margin:0 0 4px 0;
+      font-size: 28px;
+      letter-spacing: 0.2px;
+    }
+    .subtitle{
+      margin:0;
+      color: rgba(255,255,255,0.85);
+      font-size: 14.5px;
+    }
+    .pillrow{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .pill{
+      display:inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.92);
+      white-space: nowrap;
+    }
 
-<style>
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f4f7fb;
-color:#0f172a;
-}
+    .grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 14px;
+    }
+    @media (max-width: 760px){
+      .topbar{align-items:flex-start}
+      .grid{grid-template-columns: 1fr;}
+      .headshot{width: 96px; height: 96px;}
+    }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:30px 20px 60px;
-}
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 18px;
+      box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+    }
+    .card h2{
+      margin:0 0 10px 0;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+      color: var(--navy);
+    }
+    .kv{
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap: 8px 10px;
+      font-size: 14px;
+    }
+    .k{
+      color: var(--muted);
+    }
+    .v{
+      color: var(--text);
+      word-break: break-word;
+    }
 
-.header{
-background:#0b1c2d;
-color:white;
-padding:25px;
-border-radius:20px;
-display:flex;
-gap:20px;
-align-items:center;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
+    .btns{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background:#fff;
+      color: var(--navy);
+      text-decoration:none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.05s ease, box-shadow 0.15s ease;
+    }
+    .btn:hover{
+      box-shadow: 0 10px 18px rgba(2, 6, 23, 0.10);
+      transform: translateY(-1px);
+    }
+    .btn.primary{
+      background: var(--teal);
+      border-color: rgba(0,0,0,0);
+      color:#062126;
+    }
 
-.photo{
-width:110px;
-height:110px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid #ffffff40;
-}
-
-h1{
-margin:0;
-font-size:28px;
-}
-
-.subtitle{
-color:#d1e7f0;
-margin-top:4px;
-}
-
-.tags span{
-display:inline-block;
-background:#ffffff22;
-padding:6px 12px;
-border-radius:20px;
-font-size:12px;
-margin-right:6px;
-margin-top:10px;
-}
-
-.grid{
-margin-top:25px;
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:18px;
-box-shadow:0 6px 15px rgba(0,0,0,0.08);
-}
-
-.card h2{
-margin-top:0;
-color:#0b1c2d;
-}
-
-.info p{
-margin:6px 0;
-}
-
-.button{
-display:block;
-text-align:center;
-background:#00a7b3;
-color:#022;
-padding:14px;
-border-radius:14px;
-font-weight:bold;
-text-decoration:none;
-margin-bottom:12px;
-}
-
-.button.secondary{
-background:#ffffff;
-color:#0b1c2d;
-border:1px solid #ddd;
-}
-</style>
+    .note{
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .divider{
+      height:1px;
+      background: var(--border);
+      margin: 14px 0;
+    }
+    .foot{
+      margin-top: 14px;
+      font-size: 12.5px;
+      color: var(--muted);
+      text-align:center;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <section class="topbar">
+      <!-- Put your headshot image in the repo root named "headshot.jpg" -->
+      <img class="headshot" src="headshot.jpg" alt="Franco Oosthuizen headshot" />
 
-<div class="container">
+      <div class="title">
+        <h1>Franco Oosthuizen | Deckhand</h1>
+        <p class="subtitle">Cape Town • Available 28 March 2026</p>
 
-<!-- HEADER -->
-<div class="header">
-<img src="headshot.jpg" class="photo">
+        <div class="pillrow">
+          <span class="pill">South African</span>
+          <span class="pill">Entry-level / Green</span>
+          <span class="pill">Ready to travel</span>
+        </div>
+      </div>
+    </section>
 
-<div>
-<h1>Franco Oosthuizen | Deckhand</h1>
-<div class="subtitle">Cape Town • Available 28 March 2026</div>
+    <section class="grid">
+      <div class="card">
+        <h2>Quick Info</h2>
+        <div class="kv">
+          <div class="k">Name</div><div class="v">Franco Oosthuizen</div>
+          <div class="k">Role</div><div class="v">Deckhand</div>
+          <div class="k">Base</div><div class="v">Cape Town, South Africa</div>
+          <div class="k">Availability</div><div class="v">28 March 2026</div>
+          <div class="k">Email</div><div class="v"><a href="mailto:foosthuizen13@gmail.com">foosthuizen13@gmail.com</a></div>
+          <div class="k">WhatsApp</div><div class="v"><a href="https://wa.me/27836576337" target="_blank" rel="noopener">+27 83 657 6337</a></div>
+        </div>
 
-<div class="tags">
-<span>South African</span>
-<span>Green Deckhand</span>
-<span>Ready to travel</span>
-</div>
-</div>
-</div>
+        <div class="divider"></div>
 
-<!-- MAIN GRID -->
-<div class="grid">
+        <h2>CV & Certificates</h2>
+        <p class="note">
+          My full CV (including certifications and supporting documents) is available via the PDF link below.
+        </p>
+        <div style="height:10px"></div>
 
-<!-- LEFT COLUMN -->
-<div class="card info">
+        <!-- Put your CV PDF in the repo root named "Franco-Oosthuizen-CV.pdf" -->
+        <a class="btn primary" href="Franco-Oosthuizen-CV.pdf" target="_blank" rel="noopener">
+          Download CV (PDF)
+        </a>
 
-<h2>Quick Info</h2>
-<p><strong>Name:</strong> Franco Oosthuizen</p>
-<p><strong>Base:</strong> Cape Town, South Africa</p>
-<p><strong>Email:</strong> <a href="mailto:foosthuizen13@gmail.com">foosthuizen13@gmail.com</a></p>
-<p><strong>WhatsApp:</strong> <a href="https://wa.me/27836576337">+27 83 657 6337</a></p>
-<p><strong>Availability:</strong> 28 March 2026</p>
+        <div style="height:10px"></div>
+        <p class="note">
+          Tip: you can also add a Google Drive “view-only” link for certificates later if you want.
+        </p>
+      </div>
 
-<h2>CV</h2>
-<a class="button" href="Franco-Oosthuizen-CV.pdf" target="_blank">
-Download CV (PDF)
-</a>
+      <div class="card">
+        <h2>Contact</h2>
+        <div class="btns">
+          <a class="btn primary" href="mailto:foosthuizen13@gmail.com">Email Me</a>
 
-</div>
+          <!-- Replace YOURHANDLE with your actual Instagram handle -->
+          <a class="btn" href="https://instagram.com/YOURHANDLE" target="_blank" rel="noopener">
+            Instagram
+          </a>
+        </div>
 
-<!-- RIGHT COLUMN -->
-<div class="card">
+        <div class="divider"></div>
 
-<h2>Contact</h2>
+        <h2>References</h2>
+        <p class="note">
+          References available on request (or add them here if you prefer).
+        </p>
 
-<a class="button" href="mailto:foosthuizen13@gmail.com">
-Email Me
-</a>
+        <div class="divider"></div>
 
-<a class="button secondary" href="https://www.instagram.com/francooosthuizen" target="_blank">
-Instagram
-</a>
+        <h2>Notes</h2>
+        <p class="note">
+          Keep this page simple and fast to scan. Your QR code will link here.
+        </p>
+      </div>
+    </section>
 
-<h2>References</h2>
-<p>Available on request</p>
+    <p class="foot">
+      © <span id="year"></span> Franco Oosthuizen • Hosted on GitHub Pages
+    </p>
+  </div>
 
-</div>
-
-</div>
-
-</div>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
