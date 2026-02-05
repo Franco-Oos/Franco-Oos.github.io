@@ -41,17 +41,18 @@
       border: 1px solid rgba(255,255,255,.25);
     }
 
-    .header::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(135deg, rgba(11,28,45,.86), rgba(11,28,45,.70)),
-        url("background.jpg");
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.05);
-      transform: scale(1.02);
+    .header{
+  background:
+    linear-gradient(135deg, rgba(11,28,45,.86), rgba(11,28,45,.70)),
+    url("background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.header::before{
+  content:"";
+  position:absolute;
+  inset:0;
     }
 
     .header-inner{
